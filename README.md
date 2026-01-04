@@ -24,25 +24,21 @@ team-ai-directives/
 └── context_modules/
     ├── constitution.md   # <-- The foundational principles for all AI behavior
     ├── examples/
-    │   └── v1/
-    │       ├── testing/
-    │       │   └── pytest_class_based.md
-    │       └── …
+    │   ├── testing/
+    │   │   └── pytest_class_based.md
+    │   └── …
     ├── personas/
-    │   └── v1/
-    │       ├── senior_python_developer.md
-    │       └── …
+    │   ├── senior_python_developer.md
+    │   └── …
     ├── principles/
-    │   └── v1/
-    │       ├── stateless_services.md
-    │       └── zero_trust_security_model.md
-    │       └── …
+    │   ├── stateless_services.md
+    │   ├── zero_trust_security_model.md
+    │   └── …
     └── rules/
-        └── v1/
-            ├── security/
-            │   └── prevent_sql_injection.md
-            └── style-guides/
-                └── python_pep8_and_docstrings.md
+        ├── security/
+        │   └── prevent_sql_injection.md
+        └── style-guides/
+            └── python_pep8_and_docstrings.md
 ```
 
 ## Directory Functions
@@ -54,11 +50,11 @@ team-ai-directives/
 * **/personas/:** Pre-defined AI personalities tailored for specific tasks (e.g., "senior python developer," "security expert").
 * **/principles/:** Contains high-level, foundational engineering principles that can be imported into a project's constitution.md.
 * **/rules/:** Explicit guidelines for style, security standards, and architectural patterns.
-* **A Note on Versioning (/v1/):** Treating our directives as a versioned library is non-negotiable. The v1, v2, etc., subdirectories allow the MCP server to manage breaking changes gracefully and support multiple standards across different projects.
+* **A Note on Versioning:** Treating our directives as a versioned library is non-negotiable. We use git tags (v1.0.0, v2.0.0, etc.) to manage breaking changes gracefully and support multiple standards across different projects.
 
 ## Usage
 
-Point your Agentic SDLC Spec Kit or orchestration tooling at this repository to resolve `@team/...` references. Follow the versioned `v1/`, `v2/` convention when evolving personas, examples, or rules so downstream consumers can opt in to breaking changes safely.
+Point your Agentic SDLC Spec Kit or orchestration tooling at this repository to resolve `@team/...` references. Use git tags (v1.0.0, v2.0.0, etc.) when evolving personas, examples, or rules so downstream consumers can opt in to breaking changes safely.
 
 ## Governance and Contribution
 

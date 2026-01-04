@@ -10,13 +10,13 @@ All changes must be submitted via a Pull Request. The PR process requires peer r
 
 1. **Pull Latest Directives** – Before starting work, pull the latest changes from the team-ai-directives repository to ensure you are using the team's most current standards.
 2. **Fork and Branch** – create feature branches named `feature/<slug>` or `docs/<slug>`.
-3. **Add or Update Modules** – follow the directory conventions under `context_modules/`. Version new guidance under the appropriate `v#/` folder. Use standardized templates from the library for common tasks (e.g., reference existing examples or rules).
+3. **Add or Update Modules** – follow the directory conventions under `context_modules/`. Use standardized templates from the library for common tasks (e.g., reference existing examples or rules).
 4. **Validate** – run linting or schema checks if provided, and ensure markdown renders cleanly.
 5. **Document Impact** – note which projects or workflows need to update their references.
 6. **Open a Pull Request** – include:
     - Summary of changes
     - Rationale and intended benefits
-    - Any migration steps (e.g., "projects using `v1` can stay, new projects should adopt `v2`)".
+    - Any migration steps (e.g., "projects can checkout the v1.0.0 tag for old structure, new projects should use latest")".
 7. **Guild Review** – at least one member of the AI Development Guild must approve before merge.
 8. **Contribute Back via /levelup** – If you develop a highly effective new prompt or a "golden" example during your work, formalize it and submit back to this repository using the /levelup process to build the team's shared knowledge base.
 
@@ -24,7 +24,7 @@ All changes must be submitted via a Pull Request. The PR process requires peer r
 
 - Maintain a high signal-to-noise ratio: each directive should be actionable and unambiguous.
 - Avoid leaking secrets or sensitive data; use anonymized examples.
-- Prefer incremental versions (`v2`, `v3`) instead of overwriting `v1` when guidance changes materially.
+- Prefer incremental git tags (v2.0.0, v3.0.0) when guidance changes materially.
 - Keep examples up to date with current best practices and ensure they run or lint cleanly.
 - Share learnings: After completing complex tasks, share your workflow, successful prompts, or challenges with the team in the AI Development Guild forum.
 
