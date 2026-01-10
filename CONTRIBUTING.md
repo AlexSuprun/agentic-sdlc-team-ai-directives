@@ -26,6 +26,7 @@ All changes must be submitted via a Pull Request. The PR process requires peer r
 - Avoid leaking secrets or sensitive data; use anonymized examples.
 - Prefer incremental git tags (v2.0.0, v3.0.0) when guidance changes materially.
 - Keep examples up to date with current best practices and ensure they run or lint cleanly.
+- Use structured references for cross-linking: `@rule:relative_path` (relative to rules/ directory), `@example:relative_path`, `@persona:name` to reduce duplication and enable tooling.
 - Share learnings: After completing complex tasks, share your workflow, successful prompts, or challenges with the team in the AI Development Guild forum.
 
 Thank you for helping keep our shared knowledge base sharp and reliable!
