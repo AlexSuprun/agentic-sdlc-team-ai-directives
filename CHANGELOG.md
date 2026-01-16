@@ -5,6 +5,7 @@
 - Merged principles into constitution.md at root
 - Moved templates to context_modules/examples/patterns/
 - Added skills/ and prompts/ directories
+- Moved skills/ from context_modules/skills/ to skills/ (same level as context_modules/)
 - Updated README.md to reflect new structure
 - Restructured constitution: moved language-specific items (dependency injection, null safety) to rules/style-guides/
 - Generalized dependency injection as neutral rule

@@ -22,17 +22,17 @@ team-ai-directives/
 ├── CONTRIBUTING.md            # Guidelines for contributing to the repository, including pull request processes, code standards, and governance rules.
 ├── CHANGELOG.md               # A log of changes for each version tag, documenting updates, fixes, and breaking changes to support versioning.
 ├── .mcp.json                  # Configuration manifest for the platform, defining approved autonomous agents and specialized tools.
-└── context_modules/           # The "Library": The versioned, consumable "How". Contains canonical context modules for the spec-kit CLI and MCP server.
-    ├── constitution.md        # The single, foundational "Why". Contains the non-negotiable engineering principles that govern all AI behavior.
-    ├── rules/                 # Explicit guidelines for style, security standards, testing practices, and architectural patterns.
-    │   ├── style_guides/
-    │   ├── security/
-    │   └── testing/
-    ├── examples/              # High-quality code examples that serve as a "gold standard" for the AI to follow, including testing and reusable prompts.
-    │   ├── testing/
-    │   └── prompts/
-    ├── personas/
-    └── skills/
+├── context_modules/           # The "Library": The versioned, consumable "How". Contains canonical context modules for the spec-kit CLI and MCP server.
+│   ├── constitution.md        # The single, foundational "Why". Contains the non-negotiable engineering principles that govern all AI behavior.
+│   ├── rules/                 # Explicit guidelines for style, security standards, testing practices, and architectural patterns.
+│   │   ├── style_guides/
+│   │   ├── security/
+│   │   └── testing/
+│   ├── examples/              # High-quality code examples that serve as a "gold standard" for the AI to follow, including testing and reusable prompts.
+│   │   ├── testing/
+│   │   └── prompts/
+│   └── personas/
+└── skills/                    # Specialized capabilities and tools available to agents.
 ```
 
 ## Directory Functions
@@ -49,7 +49,11 @@ team-ai-directives/
 * **context_modules/rules/:** Explicit guidelines for style, security standards, testing practices, and architectural patterns.
 * **context_modules/examples/:** High-quality code examples that serve as a "gold standard" for the AI to follow, including testing and reusable prompts.
 * **context_modules/personas/:** Pre-defined AI personalities tailored for specific tasks (e.g., "senior python developer," "security expert").
-* **context_modules/skills/:** Specialized capabilities and tools available to agents.
+
+### Skills
+* **skills/:** Specialized capabilities and tools available to agents.
+
+### Versioning
 * **A Note on Versioning:** Treating our directives as a versioned library is non-negotiable. We use git tags (v1.0.0, v2.0.0, etc.) to manage breaking changes gracefully and support multiple standards across different projects.
 
 ## Usage
