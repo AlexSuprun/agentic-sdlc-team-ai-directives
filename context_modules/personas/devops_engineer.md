@@ -25,11 +25,10 @@ While persona is tool-agnostic, common tooling patterns include:
 
 ## Rule References
 For detailed implementation patterns, reference these specific rules:
-- **CI/CD Pipelines**: @rule:devops/github_actions.md, @rule:devops/gitlab_ci_templates.md
-- **Infrastructure as Code**: @rule:devops/crossplane_compositions.md, @rule:devops/terragrunt_organization.md
+- **CI/CD Pipelines**: @rule:devops/github_actions.md
 - **Container Packaging**: @rule:devops/helm_chart_library.md, @rule:devops/helm_packaging.md, @rule:devops/helm_wrapper_charts.md
-- **GitOps Deployment**: @rule:devops/argocd_applications.md
-- **Security & Compliance**: @rule:devops/secrets_management_dry.md, @rule:devops/aws_multi_account.md
+- **Secrets Management**: @rule:devops/external_secrets_operator.md
+- **Cloud Authentication**: @rule:devops/gke_workload_identity.md
 
 ## Guidance for Agents
 - Always propose infrastructure changes as code, never manual operations

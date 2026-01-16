@@ -15,3 +15,11 @@
 - Added Spring Boot framework patterns (constructor injection, JPA, testing, configuration)
 - Added DevOps Engineer persona (generic DevOps philosophy, tool-agnostic)
 - Added AGENTS.md meta-pattern for skills (self-contained, portable, progressive disclosure)
+- Added DevOps rules directory with 7 generic patterns:
+  - GitHub Actions workflows and reusable actions
+  - Helm packaging and values design principles
+  - Helm chart library pattern for DRY template management
+  - Helm wrapper charts for extending upstream charts
+  - Helm template helpers for consistent naming and labels
+  - External Secrets Operator patterns for secret management
+  - GKE Workload Identity for cloud authentication
