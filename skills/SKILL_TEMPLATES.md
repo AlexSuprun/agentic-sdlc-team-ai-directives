@@ -56,9 +56,9 @@ skill-name/
 
 ### Required Frontmatter Structure
 
-**Rule**: All SKILL.md files must include YAML frontmatter with required fields
+**Rule**: All SKILL.md files must include simple YAML frontmatter
 
-**Rationale**: Metadata for skill discovery, versioning, and categorization
+**Rationale**: Basic identification for skills, LLM-friendly discovery
 
 **Implementation**:
 ```yaml
@@ -66,10 +66,6 @@ skill-name/
 name: skill-name              # Required: kebab-case, 1-64 chars
 description: One-sentence description with trigger keywords. 1-1024 chars.
 license: MIT                   # Optional: License identifier
-metadata:
-  author: your-name          # Optional: Skill author
-  version: "1.0.0"          # Optional: Skill version
-  category: category-name       # Optional: Skill category
 ---
 ```
 
@@ -111,7 +107,7 @@ metadata:
 ### Progressive Disclosure Levels
 
 **Level 1: Metadata (Startup)**
-- YAML frontmatter with name, description, metadata
+- YAML frontmatter with name, description
 - ~100 tokens for quick skill discovery
 - Loaded when skill is triggered
 
@@ -155,10 +151,6 @@ metadata:
 name: cli-tooling-skill
 description: Generic CLI tooling patterns for command-line interfaces, task automation, and script development. Use when creating CLI tools, automation scripts, or command-line applications.
 license: MIT
-metadata:
-  author: generic-team
-  version: "1.0.0"
-  category: automation
 ---
 
 # CLI Tooling Skill
@@ -353,10 +345,6 @@ def validate_frontmatter(skill_file):
 name: generic-cli-tool
 description: Generic CLI tooling patterns for command-line interfaces, task automation, and script development. Use when creating CLI tools, automation scripts, or command-line applications.
 license: MIT
-metadata:
-  author: generic-team
-  version: "1.0.0"
-  category: automation
 ---
 
 # Generic CLI Tooling
@@ -408,10 +396,6 @@ task --init
 name: data-processor
 description: Generic data processing patterns for file operations, data transformation, and validation. Use when processing CSV files, JSON data, or implementing ETL workflows.
 license: MIT
-metadata:
-  author: generic-team
-  version: "1.0.0"
-  category: data-engineering
 ---
 
 # Data Processor
@@ -457,10 +441,6 @@ poetry install
 name: api-integration
 description: Generic API integration patterns for HTTP clients, authentication, and error handling. Use when integrating with REST APIs, GraphQL endpoints, or web services.
 license: MIT
-metadata:
-  author: generic-team
-  version: "1.0.0"
-  category: integration
 ---
 
 # API Integration
@@ -607,9 +587,9 @@ echo "✅ Skill deployment complete"
 - Document integration patterns
 
 #### **Metadata Management**
-- Use descriptive names and categories
-- Include version information for tracking
-- Add author and license information
+- Use descriptive names with trigger keywords
+- Keep frontmatter simple (name + description)
+- Add license information if applicable
 - Use consistent YAML formatting
 
 #### **Reference Management**

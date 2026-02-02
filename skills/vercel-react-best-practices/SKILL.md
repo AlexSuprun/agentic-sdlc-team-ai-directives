@@ -1,11 +1,6 @@
 ---
 name: vercel-react-best-practices
-description: React and Next.js performance optimization guidelines from Vercel Engineering. Contains 40+ rules across 8 categories prioritized by impact.
-license: MIT
-metadata:
-  source: vercel-labs/agent-skills
-  source_url: https://github.com/vercel-labs/agent-skills
-  source_skill_path: skills/react-best-practices
+description: React and Next.js performance optimization guidelines from Vercel Engineering. Contains 40+ rules across 8 categories prioritized by impact. Use when writing React components, optimizing performance, or reviewing code for best practices.
 ---
 
 # Vercel React Best Practices

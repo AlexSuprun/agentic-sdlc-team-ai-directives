@@ -52,6 +52,16 @@ team-ai-directives/
 
 ### Skills
 * **skills/:** Specialized capabilities and tools available to agents.
+* **skills/external_skills.md:** Registry of external skills referenced via URL and fetched on-demand.
+
+#### Skills Ecosystem
+The skills subsystem provides intelligent discovery and context scaffolding:
+
+- **Skill Discovery**: Agents discover relevant skills based on feature descriptions using LLM matching
+- **Progressive Refinement**: Skills are refined during `/speckit.specify` → `/speckit.plan` workflow
+- **Feature-Scoped Context**: Each feature gets its own `specs/{feature}/skills.md` that scaffolds implementation
+- **Multi-Skill Orchestration**: Wrapper documentation shows how multiple skills work together
+- **External Skills**: URL-based registry in `external_skills.md` for skills from other repositories
 
 ### Versioning
 * **A Note on Versioning:** Treating our directives as a versioned library is non-negotiable. We use git tags (v1.0.0, v2.0.0, etc.) to manage breaking changes gracefully and support multiple standards across different projects.

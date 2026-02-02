@@ -29,4 +29,44 @@ All changes must be submitted via a Pull Request. The PR process requires peer r
 - Use structured references for cross-linking: `@rule:relative_path` (relative to rules/ directory), `@example:relative_path`, `@persona:name` to reduce duplication and enable tooling.
 - Share learnings: After completing complex tasks, share your workflow, successful prompts, or challenges with the team in the AI Development Guild forum.
 
+## Contributing Skills
+
+### Skill Requirements
+
+All new skills MUST include simple frontmatter in their SKILL.md:
+
+```yaml
+---
+name: skill-name
+description: One-sentence description with trigger keywords
+license: MIT                   # Optional
+---
+```
+
+### External Skills
+
+External skills are referenced via URL in `skills/external_skills.md` and fetched on-demand. To add an external skill:
+
+1. Add entry to `skills/external_skills.md` with name, description, and URL
+2. Ensure the external skill follows the simple frontmatter format
+3. Test that the skill can be fetched using agent webfetch capabilities
+
+### Skill Development Process
+
+1. **Create Skill Directory**: Follow the structure in `skills/AGENTS.md`
+2. **Add Frontmatter**: Include simple name and description in SKILL.md
+3. **Test Skill**: Ensure skill works standalone with Read/Grep/Bash tools
+4. **Submit PR**: Include skill description and testing validation
+
+### Skill Validation Checklist
+
+Before submitting a skill PR, ensure:
+
+- [ ] SKILL.md includes simple frontmatter (name + description)
+- [ ] Description includes trigger keywords for discovery
+- [ ] Skill works standalone (no external dependencies at runtime)
+- [ ] All file references in skill are relative paths
+- [ ] Scripts (if any) use proper shebang and error handling
+- [ ] For external skills: URL is accessible and skill follows simple format
+
 Thank you for helping keep our shared knowledge base sharp and reliable!

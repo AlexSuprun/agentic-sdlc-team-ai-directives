@@ -1,5 +1,34 @@
 # Changelog
 
+## [v1.1.0] - 2025-02-01
+
+### Skills Simplification & External Skills Registry
+- **Added skills/external_skills.md**: URL-based registry for external skills from vercel-labs and other sources
+- **Simplified skills frontmatter**: Removed complex metadata, keeping only name + description (vercel-labs format)
+- **Refactored skills/ directory structure**: Moved vercel-react-best-practices to skills/ root, removed fullstack/ directory
+- **Updated skills/AGENTS.md**: Removed metadata references, added external skills section
+- **Updated CONTRIBUTING.md**: Removed metadata requirements, added external skills contribution guidelines
+- **Updated README.md**: Removed skills.manifest.yml references, added external skills explanation
+- **Simplified vercel-react-best-practices skill**: Updated frontmatter to vercel-labs simple format
+
+### Key Features
+- **External Skills**: URL-based registry for skills from other repositories, fetched on-demand via agent webfetch
+- **Simple Frontmatter**: Adopted vercel-labs format (name + description only) for better LLM compatibility
+- **LLM-Based Discovery**: Skills discovered using natural language matching instead of structured metadata
+- **Flattened Structure**: Simplified skills directory structure following vercel-labs patterns
+
+### Breaking Changes
+- Removed complex skill metadata (category, platforms, keywords, requires_context, use_cases)
+- Deleted skills.manifest.yml - skills discovered via LLM matching instead
+- Deleted docs/SKILL_METADATA_STANDARD.md - no longer needed with simple format
+- External skills now referenced via URL instead of being copied/wrapped
+
+### Migration Notes
+- Existing skills with complex metadata will still work but should be simplified gradually
+- Teams using git submodules will automatically get new external skills registry
+- Skill discovery now relies on LLM matching rather than structured metadata
+- External skills are fetched on-demand via agent webfetch capabilities
+
 ## [Unreleased] - 2025-01-10
 - Refactored repository structure to match final layout
 - Merged principles into constitution.md at root

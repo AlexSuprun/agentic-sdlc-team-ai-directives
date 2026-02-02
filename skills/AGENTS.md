@@ -28,19 +28,17 @@ Instead:
 
 ## Frontmatter Requirements
 
-All SKILL.md files must include YAML frontmatter:
+All SKILL.md files must include simple YAML frontmatter:
 
 ```yaml
 ---
 name: skill-name              # kebab-case, 1-64 chars
 description: One-sentence description with trigger keywords. 1-1024 chars.
 license: MIT                   # Optional
-metadata:
-  author: your-name          # Optional
-  version: "1.0.0"          # Optional
-  category: category-name       # Optional
 ---
 ```
+
+**Note**: External skills are referenced via URL in `external_skills.md` and fetched on-demand.
 
 ## Content Extraction (Build-Time)
 
@@ -118,6 +116,10 @@ See `dbt-template/` for reference implementation of:
 - Grep-based search patterns
 - Multi-file references
 
+## External Skills
+
+External skills are referenced via URL in `external_skills.md` and fetched on-demand using agent webfetch capabilities. See `external_skills.md` for the complete registry of available external skills.
+
 ## Reference Format Summary
 
 | Type | Use In | Syntax |
@@ -125,3 +127,4 @@ See `dbt-template/` for reference implementation of:
 | Skills → Context Modules | **Not allowed** | N/A - skills must be self-contained |
 | Skills → Skills | Optional | `[Link text](../other-skill/SKILL.md)` |
 | Skills → Internal | Required | `[Link text](references/file.md)` + `grep -l "pattern" references/` |
+| Skills → External | Optional | See `external_skills.md` for URL-based references |
