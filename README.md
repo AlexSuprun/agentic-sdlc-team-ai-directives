@@ -22,6 +22,7 @@ team-ai-directives/
 ├── CONTRIBUTING.md            # Guidelines for contributing to the repository, including pull request processes, code standards, and governance rules.
 ├── CHANGELOG.md               # A log of changes for each version tag, documenting updates, fixes, and breaking changes to support versioning.
 ├── .mcp.json                  # Configuration manifest for the platform, defining approved autonomous agents and specialized tools.
+├── .skills.json               # Skills Package Manager manifest: required/recommended/internal/blocked skills, registry, and policies.
 ├── context_modules/           # The "Library": The versioned, consumable "How". Contains canonical context modules for the spec-kit CLI and MCP server.
 │   ├── constitution.md        # The single, foundational "Why". Contains the non-negotiable engineering principles that govern all AI behavior.
 │   ├── rules/                 # Explicit guidelines for style, security standards, testing practices, and architectural patterns.
@@ -52,7 +53,7 @@ team-ai-directives/
 
 ### Skills
 * **skills/:** Specialized capabilities and tools available to agents.
-* **skills/external_skills.md:** Registry of external skills referenced via URL and fetched on-demand.
+* **.skills.json:** Team skills manifest for the Skills Package Manager. Defines required, recommended, internal, blocked skills, and a discoverable registry.
 
 #### Skills Ecosystem
 The skills subsystem provides intelligent discovery and context scaffolding:
@@ -61,7 +62,25 @@ The skills subsystem provides intelligent discovery and context scaffolding:
 - **Progressive Refinement**: Skills are refined during `/speckit.specify` → `/speckit.plan` workflow
 - **Feature-Scoped Context**: Each feature gets its own `specs/{feature}/skills.md` that scaffolds implementation
 - **Multi-Skill Orchestration**: Wrapper documentation shows how multiple skills work together
-- **External Skills**: URL-based registry in `external_skills.md` for skills from other repositories
+- **Skill Registry**: Discover additional skills in `.skills.json` registry section for manual installation
+
+#### Skills Package Manager Integration
+This repository integrates with the **Agentic SDLC Skills Package Manager** via `.skills.json`:
+
+- **Required Skills**: Auto-installed during `specify init` (e.g., `dbt-template`)
+- **Recommended Skills**: Suggested to users but optional (e.g., `devops-engineer`, external React best practices)
+- **Internal Skills**: Local team skills in `skills/` directory
+- **Blocked Skills**: Disallowed skills prevented from installation
+- **Registry**: Additional discoverable skills available for manual installation
+- **Policy Settings**: Control auto-installation and enforcement behavior
+
+When a project initializes with `--team-ai-directives`, the Skills Package Manager:
+1. Reads `.skills.json` from this repository
+2. Auto-installs required skills to `.specify/skills/`
+3. Shows recommended skills to users
+4. Enforces blocked skill policies
+
+See [.skills.json](.skills.json) for the current team skill configuration.
 
 ### Versioning
 * **A Note on Versioning:** Treating our directives as a versioned library is non-negotiable. We use git tags (v1.0.0, v2.0.0, etc.) to manage breaking changes gracefully and support multiple standards across different projects.

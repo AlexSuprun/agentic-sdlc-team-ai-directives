@@ -10,11 +10,11 @@ This repository supports **two types of skills**:
 - Include team context, references, and scripts
 - Must not require context_modules repository at runtime
 
-### External Skills  
+### External Skills
 - **URL-based** references to skills from other repositories
 - Fetched on-demand using agent webfetch capabilities
 - No local wrapper or customization needed
-- Listed in `external_skills.md` registry
+- Listed in `.skills.json` registry (recommended or registry sections)
 - Always up-to-date from external maintainers
 
 ## Directory Structure
@@ -51,7 +51,7 @@ license: MIT                   # Optional
 ---
 ```
 
-**Note**: External skills are referenced via URL in `external_skills.md` and fetched on-demand.
+**Note**: External skills are referenced via URL in `.skills.json` (recommended or registry sections) and fetched on-demand.
 
 ## Content Extraction (Local References)
 
@@ -131,14 +131,14 @@ See `dbt-template/` for reference implementation of local skills with:
 - Progressive disclosure organization
 
 ### External Skill Example
-See `external_skills.md` for URL-based external skills like:
+See `.skills.json` for URL-based external skills like:
 - vercel-react-best-practices (fetched from Vercel repository)
 - vercel-web-design-guidelines (fetched on-demand)
 - vercel-composition-patterns (React component patterns)
 
 ## External Skills
 
-External skills are referenced via URL in `external_skills.md` and fetched on-demand using agent webfetch capabilities.
+External skills are referenced via URL in `.skills.json` and fetched on-demand using agent webfetch capabilities.
 
 ### When to Use External Skills
 - When you need standardized, community-maintained skills
@@ -147,7 +147,7 @@ External skills are referenced via URL in `external_skills.md` and fetched on-de
 - When you want to leverage existing skill ecosystems
 
 ### External Skills Registry
-See `external_skills.md` for the complete registry of available external skills from:
+See `.skills.json` for the complete registry of available external skills from:
 - Vercel agent-skills repository
 - Community skill repositories
 - Third-party skill providers
@@ -159,7 +159,7 @@ See `external_skills.md` for the complete registry of available external skills 
 | Skills → Context Modules | **Not allowed** | N/A - skills must be self-contained |
 | Skills → Skills | Optional | `[Link text](../other-skill/SKILL.md)` |
 | Skills → Internal | Required | `[Link text](references/file.md)` + local references |
-| Skills → External | Optional | See `external_skills.md` for URL-based references |
+| Skills → External | Optional | See `.skills.json` for URL-based references |
 
 ## Local vs External Skills Decision Guide
 

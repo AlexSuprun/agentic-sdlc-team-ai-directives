@@ -43,20 +43,92 @@ license: MIT                   # Optional
 ---
 ```
 
-### External Skills
-
-External skills are referenced via URL in `skills/external_skills.md` and fetched on-demand. To add an external skill:
-
-1. Add entry to `skills/external_skills.md` with name, description, and URL
-2. Ensure the external skill follows the simple frontmatter format
-3. Test that the skill can be fetched using agent webfetch capabilities
-
 ### Skill Development Process
 
 1. **Create Skill Directory**: Follow the structure in `skills/AGENTS.md`
 2. **Add Frontmatter**: Include simple name and description in SKILL.md
 3. **Test Skill**: Ensure skill works standalone with Read/Grep/Bash tools
 4. **Submit PR**: Include skill description and testing validation
+
+### Skills Package Manager Integration
+
+When adding or modifying skills, update `.skills.json` to control how the Skills Package Manager handles them:
+
+```json
+{
+  "skills": {
+    "required": {
+      "local:./skills/critical-skill": {
+        "version": "*",
+        "description": "One-sentence description with trigger keywords",
+        "categories": ["category1", "category2"]
+      }
+    },
+    "recommended": {
+      "local:./skills/optional-skill": {
+        "version": "*",
+        "description": "Description for discovery",
+        "categories": ["category1"]
+      },
+      "github:org/repo/external-skill": {
+        "version": "^1.0.0",
+        "description": "External skill description",
+        "categories": ["frontend", "react"],
+        "source": "https://github.com/org/repo",
+        "url": "https://raw.githubusercontent.com/org/repo/main/skills/external-skill/SKILL.md"
+      }
+    },
+    "internal": {
+      "local:./skills/internal-skill": {
+        "version": "*",
+        "description": "Internal team skill",
+        "categories": ["internal"]
+      }
+    },
+    "blocked": [
+      {
+        "id": "github:unsafe-org/deprecated-skill",
+        "reason": "Security vulnerability - deprecated by maintainer"
+      }
+    ]
+  },
+  "registry": {
+    "skills": {
+      "github:org/repo/discoverable-skill": {
+        "version": "^1.0.0",
+        "description": "Available for manual installation",
+        "categories": ["category1"],
+        "source": "https://github.com/org/repo",
+        "url": "https://raw.githubusercontent.com/org/repo/main/skills/discoverable-skill/SKILL.md"
+      }
+    }
+  },
+  "policy": {
+    "auto_install_required": true,
+    "enforce_blocked": true,
+    "allow_project_override": true
+  }
+}
+```
+
+**Categories:**
+- **required**: Auto-installed during `specify init` (use sparingly for critical skills)
+- **recommended**: Suggested to users but optional (most skills should be here)
+- **internal**: Local team skills in `skills/` directory (auto-discovered)
+- **blocked**: Skills prevented from installation (security/compliance)
+- **registry**: Additional skills available for manual discovery and installation
+
+**Skill Metadata Fields:**
+- `version`: Version specifier (`*`, `^1.0.0`, `~1.2.0`)
+- `description`: One-sentence description with trigger keywords for discovery
+- `categories`: Array of category tags for filtering
+- `source`: Repository URL (for external skills)
+- `url`: Direct SKILL.md URL for webfetch (for external skills)
+
+**Version Specifiers:**
+- `"*"` - Any version (for local/internal skills)
+- `"^1.0.0"` - Compatible with 1.x.x (for external skills)
+- `"~1.2.0"` - Compatible with 1.2.x (for external skills)
 
 ### Skill Validation Checklist
 
@@ -68,5 +140,6 @@ Before submitting a skill PR, ensure:
 - [ ] All file references in skill are relative paths
 - [ ] Scripts (if any) use proper shebang and error handling
 - [ ] For external skills: URL is accessible and skill follows simple format
+- [ ] `.skills.json` updated if skill should be required/recommended/blocked/registry
 
 Thank you for helping keep our shared knowledge base sharp and reliable!
