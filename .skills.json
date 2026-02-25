@@ -11,10 +11,30 @@
       }
     },
     "recommended": {
-      "local:./skills/devops-engineer": {
+      "local:./skills/github-actions": {
         "version": "*",
-        "description": "DevOps engineering patterns for Kubernetes, Helm, GitHub Actions, and cloud infrastructure",
-        "categories": ["devops", "kubernetes", "helm", "cicd"]
+        "description": "GitHub Actions CI/CD pipeline patterns for reusable workflows, OIDC cloud auth, and secure pipeline design",
+        "categories": ["devops", "cicd", "github-actions"]
+      },
+      "local:./skills/helm-charts": {
+        "version": "*",
+        "description": "Helm chart library, wrapper chart, template helper, and packaging patterns for Kubernetes deployments",
+        "categories": ["devops", "kubernetes", "helm"]
+      },
+      "local:./skills/crossplane": {
+        "version": "*",
+        "description": "Crossplane Composition and XRD patterns for cloud-agnostic infrastructure as code from Kubernetes",
+        "categories": ["devops", "infrastructure", "crossplane", "kubernetes"]
+      },
+      "local:./skills/external-secrets": {
+        "version": "*",
+        "description": "External Secrets Operator patterns for syncing AWS, GCP, or Vault secrets into Kubernetes",
+        "categories": ["devops", "secrets", "kubernetes", "security"]
+      },
+      "local:./skills/gke-workload-identity": {
+        "version": "*",
+        "description": "GKE Workload Identity patterns for keyless GCP authentication from Kubernetes pods without service account keys",
+        "categories": ["devops", "gcp", "kubernetes", "security"]
       },
       "github:vercel-labs/agent-skills/react-best-practices": {
         "version": "^1.0.0",
@@ -37,10 +57,30 @@
         "description": "DBT (Data Build Tool) project templates and best practices for analytics engineering",
         "categories": ["data", "analytics", "dbt"]
       },
-      "local:./skills/devops-engineer": {
+      "local:./skills/github-actions": {
         "version": "*",
-        "description": "DevOps engineering patterns for Kubernetes, Helm, GitHub Actions, and cloud infrastructure",
-        "categories": ["devops", "kubernetes", "helm", "cicd"]
+        "description": "GitHub Actions CI/CD pipeline patterns for reusable workflows, OIDC cloud auth, and secure pipeline design",
+        "categories": ["devops", "cicd", "github-actions"]
+      },
+      "local:./skills/helm-charts": {
+        "version": "*",
+        "description": "Helm chart library, wrapper chart, template helper, and packaging patterns for Kubernetes deployments",
+        "categories": ["devops", "kubernetes", "helm"]
+      },
+      "local:./skills/crossplane": {
+        "version": "*",
+        "description": "Crossplane Composition and XRD patterns for cloud-agnostic infrastructure as code from Kubernetes",
+        "categories": ["devops", "infrastructure", "crossplane", "kubernetes"]
+      },
+      "local:./skills/external-secrets": {
+        "version": "*",
+        "description": "External Secrets Operator patterns for syncing AWS, GCP, or Vault secrets into Kubernetes",
+        "categories": ["devops", "secrets", "kubernetes", "security"]
+      },
+      "local:./skills/gke-workload-identity": {
+        "version": "*",
+        "description": "GKE Workload Identity patterns for keyless GCP authentication from Kubernetes pods without service account keys",
+        "categories": ["devops", "gcp", "kubernetes", "security"]
       }
     },
     "blocked": [

@@ -5,4 +5,14 @@
       "args": ["-y", "@upstash/context7-mcp"]
     }
   }
+  ,
+  "tools": {
+    "github": {
+      "type": "github",
+      "tokenEnv": "GITHUB_TOKEN",
+      "owner": "GITHUB_OWNER",
+      "repo": "GITHUB_REPO",
+      "baseUrl": "https://api.github.com"
+    }
+  }
 }
